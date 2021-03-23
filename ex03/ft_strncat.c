@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mderuell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 17:14:58 by mderuell          #+#    #+#             */
-/*   Updated: 2021/03/22 17:30:27 by mderuell         ###   ########.fr       */
+/*   Created: 2021/03/23 17:04:54 by mderuell          #+#    #+#             */
+/*   Updated: 2021/03/23 17:16:03 by mderuell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+char *ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int i;
 	int a;
 	int b;
+	unsigned int i;
 
-	i = 0;
 	a = 0;
 	b = 0;
-	while (i <= n)
+	i = 1;
+	while (dest[a])
+		a++;
+	while (src[b] && i <= nb)
 	{
-		while (s1[a] && i == n)
-			a++;
-		while (s2[b] && i == n)
-			b++;
+		dest[a + b] = src[b];
+		b++;
+		if (src[b] == 0)
+			dest[a + b] = '\0';
 		i++;
 	}
-	return (a - b);
-
+	return (dest);
 }
 #include <stdio.h>
 int main()
 {
-	char s1[] = "123456";
-	char s2[] = "1234";
-
-	printf("%d\n",ft_strncmp(s1, s2,1));
+	char src[100] =  "testsiiiii";
+	char dest[100] = "testdest";
+	unsigned int nb = 6;
+	printf("dest is %s\n", ft_strncat(dest,src,nb));
 	return 0;
 }

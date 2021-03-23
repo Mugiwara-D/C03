@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mderuell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 17:14:58 by mderuell          #+#    #+#             */
-/*   Updated: 2021/03/22 17:30:27 by mderuell         ###   ########.fr       */
+/*   Created: 2021/03/23 17:18:39 by mderuell          #+#    #+#             */
+/*   Updated: 2021/03/23 17:50:49 by mderuell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int i;
-	int a;
-	int b;
+		int i;
 
-	i = 0;
-	a = 0;
-	b = 0;
-	while (i <= n)
-	{
-		while (s1[a] && i == n)
-			a++;
-		while (s2[b] && i == n)
-			b++;
-		i++;
-	}
-	return (a - b);
-
+		i = 0;
+		while (str[i])
+		{
+			if(str[i] == to_find[i])
+				return (to_find)
+			i++;
+		}
+		return (ret);
 }
 #include <stdio.h>
 int main()
 {
-	char s1[] = "123456";
-	char s2[] = "1234";
-
-	printf("%d\n",ft_strncmp(s1, s2,1));
+	char str[] = "stringlol";
+	char to_find[] = "lol";
+	printf("dest is %s\n", ft_strstr(str,to_find));
 	return 0;
 }
