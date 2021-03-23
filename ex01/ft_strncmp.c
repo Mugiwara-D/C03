@@ -19,16 +19,15 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 	i = 0;
 	a = 0;
 	b = 0;
-	while (i <= n)
+	while (i < n)
 	{
-		while (s1[a] && i == n)
+		if (s1[a])
 			a++;
-		while (s2[b] && i == n)
+		if (s2[a])
 			b++;
 		i++;
 	}
 	return (a - b);
-
 }
 #include <stdio.h>
 int main()
@@ -36,6 +35,6 @@ int main()
 	char s1[] = "123456";
 	char s2[] = "1234";
 
-	printf("%d\n",ft_strncmp(s1, s2,1));
+	printf("%d\n",ft_strncmp(s1, s2,2));
 	return 0;
 }
