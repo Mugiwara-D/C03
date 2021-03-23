@@ -13,21 +13,29 @@
 char	*ft_strstr(char *str, char *to_find)
 {
 		int i;
+		int j;
 
+		j = 0;
 		i = 0;
 		while (str[i])
 		{
-			if(str[i] == to_find[i])
-				return (to_find)
+			if (to_find[j] == 0)
+				return (to_find);
+			while (to_find[j] == str[i + j])
+			{
+				if (to_find[j + 1] == 0)
+					return (str + i);
+				j++;
+			}
 			i++;
 		}
-		return (ret);
+		return (0);
 }
 #include <stdio.h>
 int main()
 {
 	char str[] = "stringlol";
-	char to_find[] = "lol";
+	char to_find[] = "";
 	printf("dest is %s\n", ft_strstr(str,to_find));
 	return 0;
 }
