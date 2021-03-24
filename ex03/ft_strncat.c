@@ -6,15 +6,15 @@
 /*   By: mderuell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 17:04:54 by mderuell          #+#    #+#             */
-/*   Updated: 2021/03/23 17:16:03 by mderuell         ###   ########.fr       */
+/*   Updated: 2021/03/24 10:46:19 by mderuell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int a;
-	int b;
-	unsigned int i;
+	int				a;
+	int				b;
+	unsigned int	i;
 
 	a = 0;
 	b = 0;
@@ -30,13 +30,4 @@ char *ft_strncat(char *dest, char *src, unsigned int nb)
 		i++;
 	}
 	return (dest);
-}
-#include <stdio.h>
-int main()
-{
-	char src[100] =  "testsiiiii";
-	char dest[100] = "testdest";
-	unsigned int nb = 6;
-	printf("dest is %s\n", ft_strncat(dest,src,nb));
-	return 0;
 }
