@@ -13,27 +13,22 @@
 int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i;
-	int a;
-	int b;
 
 	i = 0;
-	a = 0;
-	b = 0;
-	while (i < n)
-	{
-		if (s1[a])
-			a++;
-		if (s2[a])
-			b++;
+	if (n <= 1)
+	       return (0);	
+	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
-	}
-	return (a - b);
+	if (i < n)
+		return (s1[i] - s2[i]);
+	else
+		return(0);
 }
 #include <stdio.h>
 int main()
 {
 	char s1[] = "123456";
-	char s2[] = "1234";
+	char s2[] = "1634";
 
 	printf("%d\n",ft_strncmp(s1, s2,2));
 	return 0;

@@ -18,17 +18,16 @@ char *ft_strncat(char *dest, char *src, unsigned int nb)
 
 	a = 0;
 	b = 0;
-	i = 1;
+	i = 0;
 	while (dest[a])
 		a++;
-	while (src[b] && i <= nb)
+	while (src[b] && i < nb)
 	{
 		dest[a + b] = src[b];
 		b++;
-		if (src[b] == 0)
-			dest[a + b] = '\0';
 		i++;
 	}
+	dest[a + b] = '\0';
 	return (dest);
 }
 #include <stdio.h>
